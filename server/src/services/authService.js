@@ -27,3 +27,11 @@ export async function loginUser({email,password}){
     user.password = undefined;
     return {user,token};
 }
+
+export async function getCurrentUser(userId) {
+    const currUser = await User.findById(userId);
+    if(!currUser){
+        throw new Error('No User Found.');
+    }
+    return currUser;
+}
