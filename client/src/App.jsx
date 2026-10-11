@@ -1,9 +1,15 @@
-import { Routes ,Route ,Link } from 'react-router-dom';
+import { Routes ,Route ,Link,useNavigate } from 'react-router-dom';
 import Login from './pages/Login.jsx';
 import { useAuth } from './context/AuthContext';
 
 function Home() {
-  const {user, loading} = useAuth();
+  const {user, loading, logout} = useAuth();
+  const navigate = useNavigate();
+
+  async function handleLogout(){
+    await logout();
+    navigate('/login');
+  }
 
   if(loading){
     return <p>Loading...</p>;
@@ -12,7 +18,10 @@ function Home() {
   if(!user){
     return <p>Not Logged In. <Link to="Login">Log In</Link></p>;
   }
-  return <p>Welcome, {user.name} ({user.role})</p>;
+  return <div>
+  <p>Welcome, {user.name} ({user.role})</p>
+  <button onClick={handleLogout}>Logout</button>
+  </div>;
 }
 
 export default function App(){
