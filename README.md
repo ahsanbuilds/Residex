@@ -106,4 +106,6 @@ NODE_ENV=development
 ## Author
 
 ** Muhammad Ahsan** — Software Engineering Student, University of Central Punjab
-linkedin.com/muhmadahsan · ahsanshakeel034@gmail.com
+
+LinkedIn: www.linkedin.com/muhmadahsan 
+Gmail: ahsanshakeel034@gmail.com
