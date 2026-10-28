@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate , Link } from 'react-router-dom';
 import api from '../api/axios.js';
 import { useAuth } from '../context/AuthContext.jsx';
 
@@ -36,6 +36,7 @@ export default function Login(){
             onChangeCapture={(e)=>setPassword(e.target.value)} required
             />
             <button type="submit">Log In</button>
+            <Link to="/register">Create an account</Link>
         </form>
     );
 }
